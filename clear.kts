@@ -37,7 +37,7 @@ val usedNames = projects.map { p ->
     }.flatten()
 }.flatten().toSet()
 
-val unusedNames = reses().map { file -> getFileName(file) }.filter { d -> !usedNames.contains(d) }.toSet()
+val unusedNames = allNames().filter { d -> !usedNames.contains(d) }.toSet()
 
 fun cleanDir(f: File) {
     if (f.isDirectory) {
